@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './scanhere.svg';
 import './App.css';
 
 function App() {
@@ -12,11 +12,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.scanhere.app/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          ScanHere App
         </a>
       </header>
     </div>
