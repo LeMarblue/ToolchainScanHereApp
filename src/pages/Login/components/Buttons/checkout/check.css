@@ -1,0 +1,16 @@
+.styleCheck{
+    
+    font-size: 12px;
+
+}
+.sizeCheck{
+    width: 10px;
+
+}
+
+.checkPosition{
+    display: flex;
+    justify-items: left;
+   
+
+}

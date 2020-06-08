@@ -1,0 +1,13 @@
+.App-logo{
+    width: 30px;
+    height: 30px;
+}
+.sizeTitle{
+    font-size: 30px;
+}
+.headerContent{
+    display:inline-block;
+    justify-content: flex-start;
+    white-space: pre-line;
+
+}

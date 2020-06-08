@@ -1,0 +1,18 @@
+.App-logo{
+    width: 30px;
+    height: 30px;
+}
+.sizeTitle{
+    font-size: 30px;
+}
+.bodyContent{
+    display:inline-block;
+    justify-content: space-evenly;
+    align-content: flex-start;
+   
+
+}
+.borderContent{
+    border: linear-gradient(rgb(70%, 0%, 30%), rgb(100%, 0%, 60%));
+} 
+
