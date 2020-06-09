@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import logo from '../../scanhere.svg'
+import Header from '../../Components/Header'
+
 import {
   Link
 } from 'react-router-dom'
 // import Header from '../../Components/Header'
 
 // css
-
 import './Home.css'
 
 export default class index extends Component {
@@ -14,9 +15,11 @@ export default class index extends Component {
     return (
       <div className='container'>
         <div className='row justify-content-center align-items-center max-h'>
+          <Header />
           <div className='col-12 img'>
-            <img src={logo} className='App-logo m-5' alt='logo' />
+            <img src={logo} className='App-logo m-3' alt='logo' />
           </div>
+
           <div className='col-12 link'>
             {/* <a
               className='App-link'
@@ -26,8 +29,12 @@ export default class index extends Component {
             >
                   ScanHere App
             </a> */}
-            <Link to='/sigin' exact>
-              <button type='button' class='btn btn-dark'>Sigin</button>
+            <Link to='/login' exact>
+              <button type='button' className='px-4 button py-2'>Login</button>
+            </Link>
+
+            <Link to='/sig' exact>
+              <button type='button' className='px-4 button py-2'>Sign up</button>
             </Link>
           </div>
         </div>

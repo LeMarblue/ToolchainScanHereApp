@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
-import Login from './Components/Header'
+import Login from './pages/Login'
 
 function App () {
   return (

@@ -8,6 +8,18 @@
   margin-top: 25%;
 }
 
+.button {
+  background-image: linear-gradient(#B93ABC, #157CF5);
+  width: 90%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+} 
+
+/* .imgsh{
+  margin-top: 20px;
+  margin-left: 17%;
+} */
+
 .link {
   margin-top: 100px;
 }
