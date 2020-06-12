@@ -1,0 +1,21 @@
+import React from 'react'
+import moment from 'moment'
+
+export default function PromoDateAndScanNumber (props) {
+  const { promoStarts, numberOfScans } = props
+  console.log('[PromoDateAndScanNumber]:', props)
+  return (
+    <div className='row'>
+      <div className='col-12'>
+        <p className='text-center'>
+          {moment(promoStarts).format('DD/MMM')}
+        </p>
+      </div>
+      <div className='col-12'>
+        <p className='text-center'>
+          {numberOfScans}
+        </p>
+      </div>
+    </div>
+  )
+}
