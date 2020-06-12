@@ -13,7 +13,7 @@ export default class Admin extends React.Component {
         <Header/>
         <div className='row'>
           <div className='col-lg-6 col-md-12'>
-            <div className="card ">
+            <div className="card">
               <div id="dougnut">
               <Dougnut/>
               </div>
