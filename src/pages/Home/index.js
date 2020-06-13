@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import logo from '../../scanhere.svg'
 import Header from '../../Components/Header'
+import NavBar from '../../Components/NavBar'
 
 import {
   Link
@@ -14,12 +15,15 @@ export default class index extends Component {
   render () {
     return (
       <div className='container'>
+        
         <div className='row justify-content-center align-items-center max-h'>
+        
           <Header />
-          <div className='col-12 img'>
+          
+          <div className='col-12'>
             <img src={logo} className='App-logo m-3' alt='logo' />
           </div>
-
+          <NavBar />
           <div className='col-12 link'>
             {/* <a
               className='App-link'
