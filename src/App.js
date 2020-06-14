@@ -10,6 +10,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import PagePromoList from './pages/Promo-List'
 import PagePromoQrlist from './pages/Promo-Qr-List'
+import AlbumQr from './pages/Album-QR'
 
 function App () {
   return (
@@ -25,9 +26,10 @@ function App () {
           <Route exact path='/promo-list'>
             <PagePromoList />
           </Route>
-          <Route exact path='/test'>
+          <Route exact path='/promo-qr-list'>
             <PagePromoQrlist />
           </Route>
+          <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
           {/* <Route exact path='/sigin'>
             <SigIn />
           </Route> */}
