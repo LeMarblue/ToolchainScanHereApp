@@ -23,7 +23,7 @@ export default class index extends Component {
           <div className='col-12'>
             <img src={logo} className='App-logo m-3' alt='logo' />
           </div>
-          <NavBar />
+          
           <div className='col-12 link'>
             {/* <a
               className='App-link'
@@ -41,7 +41,9 @@ export default class index extends Component {
               <button type='button' className='px-4 button py-2'>Sign up</button>
             </Link>
           </div>
+         
         </div>
+        <NavBar />
       </div>
     )
   }

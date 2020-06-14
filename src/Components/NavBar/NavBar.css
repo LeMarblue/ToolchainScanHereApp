@@ -36,7 +36,11 @@ main {
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 600ms ease;
-  overflow: scroll;
+  /*overflow: scroll;*/
+  left: 0px;
+  right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .navbar-nav {
@@ -53,9 +57,9 @@ main {
   width: 100%;
 }
 
-.nav-item:last-child {
+/*.nav-item:last-child {
   margin-top: auto;
-}
+}*/
 
 .nav-link {
   display: flex;
@@ -213,4 +217,7 @@ main {
 
 .solar #solarIcon {
   display: block;
+}
+.rounded{
+  background-color: transparent;
 }
