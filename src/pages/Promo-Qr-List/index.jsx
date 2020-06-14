@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import './page-promo-qr-list.css'
 import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 
+import api from '../../lib/api'
+
 export default class PagePromoQrlist extends Component {
   constructor (props) {
     super(props)
@@ -13,10 +15,9 @@ export default class PagePromoQrlist extends Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8082/promotions')
-      .then(response => response.json())
-      .then(({ data: { promotion } }) => {
-        const formatedPromotions = promotion.map(promo => {
+    api.getAllPromotions()
+      .then((promotions) => {
+        const formatedPromotions = promotions.map(promo => {
           return {
             id: promo._id,
             ...promo
@@ -37,7 +38,7 @@ export default class PagePromoQrlist extends Component {
           </div>
         </div>
         <div className='row'>
-          <CardsQrWrapper cardsPromos={this.state.promoList} />
+          <CardsQrWrapper cardsPromos={this.state.promoList} isUser />
         </div>
       aqui irian los botones
       </div>
