@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import PagePromoListTitle from './components/title'
 import CardList from '../../Components/cards/cards-wrapper'
 
+import api from '../../lib/api'
+
 // css
 import './promo-list.css'
 
@@ -15,10 +17,9 @@ export default class PagePromoList extends Component {
   }
 
   componentDidMount () {
-    fetch('http://localhost:8082/promotions')
-      .then(response => response.json())
-      .then(({ data: { promotion } }) => {
-        const formatedPromotions = promotion.map(promo => {
+    api.getAllPromotions()
+      .then((promotions) => {
+        const formatedPromotions = promotions.map(promo => {
           return {
             id: promo._id,
             ...promo
