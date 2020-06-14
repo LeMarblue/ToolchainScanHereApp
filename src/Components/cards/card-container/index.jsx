@@ -6,12 +6,22 @@ import './card-container.css'
 
 export default function CardContainer (props) {
   const { children, id } = props
-  console.log('cardContainer:', props)
   return (
-    <Link to={`/${id}`}>
-      <div className='card-container'>
-        {children}
-      </div>
-    </Link>
+    <>
+      {
+        id ? (
+          <Link to={`/${id}`}>
+            <div className='card-container'>
+              {children}
+            </div>
+          </Link>
+        )
+          : (
+            <div className='card-container'>
+              {children}
+            </div>
+          )
+      }
+    </>
   )
 }
