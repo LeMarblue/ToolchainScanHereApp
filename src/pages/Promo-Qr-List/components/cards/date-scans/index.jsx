@@ -3,7 +3,6 @@ import moment from 'moment'
 
 export default function PromoDateAndScanNumber (props) {
   const { promoStarts, numberOfScans } = props
-  console.log('[PromoDateAndScanNumber]:', props)
   return (
     <div className='row'>
       <div className='col-12'>
