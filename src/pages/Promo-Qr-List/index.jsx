@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 
-import PagePromoListTitle from './components/title'
-import CardList from '../../Components/cards/cards-wrapper'
+// css
+import './page-promo-qr-list.css'
+import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 
 import api from '../../lib/api'
 
-// css
-import './promo-list.css'
-
-export default class PagePromoList extends Component {
+export default class PagePromoQrlist extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      promoList: []
+      promolist: []
     }
   }
 
@@ -36,11 +34,11 @@ export default class PagePromoList extends Component {
       <div className='container page-promo-list'>
         <div className='row'>
           <div className='col-12'>
-            <PagePromoListTitle />
+            <h1>Promotions!!</h1>
           </div>
         </div>
         <div className='row'>
-          <CardList cardsPromos={this.state.promoList} />
+          <CardsQrWrapper cardsPromos={this.state.promoList} isUser />
         </div>
       aqui irian los botones
       </div>
