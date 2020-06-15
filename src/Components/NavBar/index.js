@@ -50,7 +50,8 @@ export default class Login extends Component {
             viewBox="0 0 512 512"
             className="svg-inline--fa fa-cat fa-w-16 fa-9x"
          ></svg>*/}
-          <img src="https://img.icons8.com/nolan/64/bar-chart.png" className='rounded mx-auto d-block mt-3' alt='igsh' />
+          
+          <img src="https://img.icons8.com/nolan/64/shopping-cart-loaded.png" className='rounded d-block mt-3 margenNav' alt='igsh'/>
             <g className="fa-group">
               <path
                 fill="currentColor"
@@ -64,7 +65,7 @@ export default class Login extends Component {
               ></path>
             </g>
           
-          <span className="link-text">GRAPHICS</span>
+          <span className="link-text">PROMOTION</span>
         </a>
       </li>
 
@@ -80,7 +81,7 @@ export default class Login extends Component {
             viewBox="0 0 576 512"
             className="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
           ></svg>*/}
-           <img src={sh} className='rounded mx-auto d-block mt-3' alt='igsh' />
+           <img src={sh} className='rounded d-block mt-3 margenNav' alt='igsh' />
             <g className="fa-group">
               <path
                 fill="currentColor"
@@ -110,7 +111,8 @@ export default class Login extends Component {
             viewBox="0 0 576 512"
             className="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
           ></svg>*/}
-           <img src="https://img.icons8.com/nolan/64/picture.png" className='rounded mx-auto d-block mt-3' alt='igsh' />
+           
+           <img src="https://img.icons8.com/nolan/64/stack-of-photos.png" className='rounded d-block mt-3 margenNav' alt='igsh'/>
             <g className="fa-group">
               <path
                 fill="currentColor"
@@ -124,7 +126,7 @@ export default class Login extends Component {
               ></path>
             </g>
           
-          <span className="link-text">STATISTIC</span>
+          <span className="link-text">ALBUM</span>
         </a>
       </li>
       
