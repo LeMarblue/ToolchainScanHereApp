@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import SignIn from './pages/SignUp'
 
 function App () {
   return (
@@ -20,9 +21,9 @@ function App () {
           <Route exact path='/login'>
             <Login />
           </Route>
-          {/* <Route exact path='/sigin'>
-            <SigIn />
-          </Route> */}
+          <Route exact path='/sigin'>
+            <SignIn />
+          </Route>
         </Switch>
       </div>
     </Router>

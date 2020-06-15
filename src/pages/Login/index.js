@@ -9,24 +9,46 @@ export default class Login extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      hola: ''
+      email: '',
+      password: '',
+      success: false
     }
   }
 
+  handleInput ({ target: { name, value } }) {
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit (event) {
+    event.preventDefault()
+    console.log('envoandp datos')
+    const { email, password } = this.state
+    const dataCredentials = {
+      email,
+      password
+    }
+    this.props.validateCredentials(dataCredentials)
+  }
+
   render () {
+    const { email, password } = this.state
     return (
-      <div className='container'>
+      <div>
         <Header />
-        <div className='form'>
-          <Form>
-            <Form.Group controlId='formBasicEmail'>
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='Enter email' />
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type='email' placeholder='Enter email' />
-            </Form.Group>
-          </Form>
+        <div className='title d-flex justify-content-center font-weight-bold mt-5'>
+          <p>Login</p>
         </div>
+        <Form className='px-4 mt-5'>
+          <Form.Group controlId='formBasicEmail'>
+            <Form.Label className='d-flex justify-content-start'>Email </Form.Label>
+            <Form.Control type='email' id='email' className='form-control mb-4' placeholder='Your email here' value={email} onChange={this.handleInput} />
+            <Form.Label className='d-flex justify-content-start'>Password</Form.Label>
+            <Form.Control type='password' id='password' className='form-control' placeholder='*****' value={password} onChange={this.handleInput} />
+          </Form.Group>
+          <button type='submit' className='m-3 px-4 button py-2'>Login</button>
+        </Form>
       </div>
     )
   }

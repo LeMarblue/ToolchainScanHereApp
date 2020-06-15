@@ -33,7 +33,7 @@ export default class index extends Component {
               <button type='button' className='px-4 button py-2'>Login</button>
             </Link>
 
-            <Link to='/sig' exact>
+            <Link to='/sigin' exact>
               <button type='button' className='px-4 button py-2'>Sign up</button>
             </Link>
           </div>
