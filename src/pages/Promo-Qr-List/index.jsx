@@ -15,7 +15,8 @@ export default class PagePromoQrlist extends Component {
   }
 
   componentDidMount () {
-    api.getAllPromotions()
+    const token = localStorage.getItem('authUserToken')
+    api.getAllPromotions(token)
       .then((promotions) => {
         const formatedPromotions = promotions.map(promo => {
           return {
