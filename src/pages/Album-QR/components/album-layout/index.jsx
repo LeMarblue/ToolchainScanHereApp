@@ -16,8 +16,8 @@ export default class AlbumLayout extends Component {
   }
 
   componentDidMount () {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZTNmOTEwZGVmOGYxMjhkYzI5OTRhZSIsInJvbGwiOiJ1c2VyIiwiaWF0IjoxNTkyMTQ0NzYzfQ.QEWwLMdr9HgnHgimVnb-yA1dSuFL3L8rp7jL6GmWTWw'
-    const promotionId = '5ee1552dbe3f3f6d1a11d8e4'
+    const token = localStorage.getItem('authUserToken')
+    const promotionId = this.props.promotionId
     api.getPromotionsScansByUser(token, promotionId)
       .then(scans => {
         this.setState({

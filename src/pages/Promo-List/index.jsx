@@ -17,18 +17,21 @@ export default class PagePromoList extends Component {
   }
 
   componentDidMount () {
-    api.getAllPromotions()
-      .then((promotions) => {
-        const formatedPromotions = promotions.map(promo => {
-          return {
-            id: promo._id,
-            ...promo
-          }
+    const token = localStorage.getItem('authUserToken')
+    if (token) {
+      api.getAllPromotions(token)
+        .then((promotions) => {
+          const formatedPromotions = promotions.map(promo => {
+            return {
+              id: promo._id,
+              ...promo
+            }
+          })
+          this.setState({
+            promoList: formatedPromotions
+          })
         })
-        this.setState({
-          promoList: formatedPromotions
-        })
-      })
+    }
   }
 
   render () {

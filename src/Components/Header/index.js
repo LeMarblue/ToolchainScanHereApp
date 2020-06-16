@@ -5,11 +5,10 @@ import sh from '../../nombreLogo.svg'
 export default class Login extends Component {
   render () {
     return (
-      <div>
-        <div className='col-12 '>
-          <img src={sh} className='rounded mx-auto d-block mt-3' alt='igsh' />
-        </div>
+      <div className='col-12 '>
+        <img src={sh} className='rounded mx-auto d-block mt-2' alt='igsh' />
       </div>
+
     )
   }
 }
