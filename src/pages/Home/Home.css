@@ -3,17 +3,25 @@
   color: white;
 }
 
-.img {
+/* .img {
   
   margin-top: 25%;
-}
+} */
 
 .button {
   background-image: linear-gradient(#B93ABC, #157CF5);
   width: 90%;
   border-radius: 15px;
   margin-bottom: 20px;
-} 
+}
+
+/* .btn {
+  color: white;
+}
+
+.btn :hover {
+  color: red
+} */
 
 /* .imgsh{
   margin-top: 20px;

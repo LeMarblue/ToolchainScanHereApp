@@ -16,8 +16,9 @@ export default class index extends Component {
       <div className='container'>
         <div className='row justify-content-center align-items-center max-h'>
           <Header />
+
           <div className='col-12 img'>
-            <img src={logo} className='App-logo m-3' alt='logo' />
+            <img src={logo} className='App-logo mt-5' alt='logo' />
           </div>
 
           <div className='col-12 link'>
@@ -33,7 +34,7 @@ export default class index extends Component {
               <button type='button' className='px-4 button py-2'>Login</button>
             </Link>
 
-            <Link to='/sig' exact>
+            <Link to='/sigin' exact>
               <button type='button' className='px-4 button py-2'>Sign up</button>
             </Link>
           </div>

@@ -18,6 +18,9 @@ export default class Login extends Component {
       <div className='container'>
         <Header />
         <div className='form'>
+          <div className='mt-5 title d-flex justify-content-center font-weight-bold'>
+            <p>Login</p>
+          </div>
           <Form>
             <Form.Group controlId='formBasicEmail'>
               <Form.Label>Email address</Form.Label>

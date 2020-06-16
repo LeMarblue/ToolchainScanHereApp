@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import SigIn from './pages/SignUp'
+import FormProducts from './pages/FormProducts'
+import FormPromo from './pages/FormPromo'
 
 function App () {
   return (
@@ -20,9 +23,15 @@ function App () {
           <Route exact path='/login'>
             <Login />
           </Route>
-          {/* <Route exact path='/sigin'>
+          <Route exact path='/sigin'>
             <SigIn />
-          </Route> */}
+          </Route>
+          <Route exact path='/addProduct'>
+            <FormProducts />
+          </Route>
+          <Route exact path='/addPromo'>
+            <FormPromo />
+          </Route>
         </Switch>
       </div>
     </Router>
