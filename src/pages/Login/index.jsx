@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Header from '../../Components/Header'
 import Inputs from '../SignIn/components/inputs'
+import api from '../../lib/api'
+import { Redirect } from 'react-router-dom'
 
 // css
 import './Login.css'
@@ -11,11 +13,48 @@ export default class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      success: false
+      error: null,
+      isLogedIn: false
     }
+    this.handleInputOnChange = this.handleInputOnChange.bind(this)
+    this.handleButton = this.handleButton.bind(this)
+  }
+
+  componentDidMount () {
+    const token = localStorage.getItem('authUserToken')
+    this.setState({
+      isLogedIn: !!token
+    })
+  }
+
+  handleInputOnChange ({ target: { value, name } }) {
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleButton (event) {
+    event.preventDefault()
+    api.login(this.state)
+      .then((token) => {
+        localStorage.setItem('authUserToken', token)
+        this.setState({
+          isLogedIn: true
+        })
+      })
+      .catch((error) => {
+        this.setState({
+          error
+        })
+      })
   }
 
   render () {
+    if (this.state.isLogedIn) {
+      return (
+        <Redirect to='/promos' />
+      )
+    }
     return (
       <div className='container-login'>
         <div className='row container-form'>
@@ -27,13 +66,20 @@ export default class Login extends Component {
               logIn
             </h2>
           </div>
+          {
+            this.state.error && (
+              <div className='col-12 col-md-8'>
+                Datos incorrectos
+              </div>
+            )
+          }
           <div className='col-12 col-md-8 p-3'>
             <form>
-              <Inputs labelName='name' labelFor='name' placeholder='name' min='3' type='text' />
-              <Inputs labelName='email' labelFor='email' placeholder='tu@email.com' min='3' type='email' />
+              <Inputs name='email' labelfor='email' placeholder='tu@email.com' min='3' type='email' value={this.state.email} onChange={this.handleInputOnChange} />
+              <Inputs name='password' labelfor='password' placeholder='123456' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
               <div className='row d-flex justify-content-center'>
                 <div className='col-6'>
-                  <button type='submit' className='m-3 px-4 button py-2'>SignIn</button>
+                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>LogIn</button>
                 </div>
               </div>
             </form>
