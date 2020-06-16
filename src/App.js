@@ -9,8 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import SignIn from './pages/SignIn'
-import PagePromoList from './pages/Promo-List'
-import PagePromoQrlist from './pages/Promo-Qr-List'
+import Promos from './pages/Promos'
 import AlbumQr from './pages/Album-QR'
 
 function App () {
@@ -27,16 +26,10 @@ function App () {
           <Route exact path='/sigin'>
             <SignIn />
           </Route>
-          <Route exact path='/promo-list'>
-            <PagePromoList />
-          </Route>
-          <Route exact path='/promo-qr-list'>
-            <PagePromoQrlist />
+          <Route exact path='/promos'>
+            <Promos />
           </Route>
           <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
-          {/* <Route exact path='/sigin'>
-            <SigIn />
-          </Route> */}
         </Switch>
       </div>
     </Router>
