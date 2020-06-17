@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from '../../scanhere.svg'
 import Header from '../../Components/Header'
 import NavBar from '../../Components/NavBar'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 import {
   Link
@@ -43,7 +44,8 @@ export default class index extends Component {
           </div>
          
         </div>
-        <NavBar />
+        <NavBarAdmin />
+        {/*<NavBar />*/}
       </div>
     )
   }

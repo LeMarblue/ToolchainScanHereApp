@@ -3,7 +3,10 @@ import Header from '../../Components/Header'
 import HeaderPromociones from '../../Components/Header-Promociones'
 import Footer from '../../Components/Footer'
 
+import NavBar from '../../Components/NavBar'
+
 import { Form } from 'react-bootstrap'
+
 
 // css
 import './User-QR.css'
@@ -15,12 +18,14 @@ export default class Login extends Component {
       hola: ''
     }
   }
+  
 
   render () {
     return (
       <div className='container'>
         <Header />
         <HeaderPromociones />
+        
         <div className='form'>
           <Form>
             <Form.Group controlId='formBasicEmail'>
@@ -32,8 +37,11 @@ export default class Login extends Component {
           </Form>
           
         </div>
-        <Footer />
+        <NavBar id="navrender" />
+        {/*<Footer />*/}
       </div>
     )
   }
 }
+
+
