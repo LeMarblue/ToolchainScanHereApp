@@ -44,6 +44,12 @@ export default class AlbumQr extends Component {
         <Redirect to='/login' />
       )
     }
+    const payload = token.split('.')[1]
+    const decodedPayload = atob(payload)
+    const { roll } = JSON.parse(decodedPayload)
+    if (roll === 'admin') {
+      return <Redirect to='/promos' />
+    }
     return (
       <div className='container album-qr'>
         <PromotionData
