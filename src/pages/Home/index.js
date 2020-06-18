@@ -16,20 +16,11 @@ export default class index extends Component {
       <div className='container'>
         <div className='row justify-content-center align-items-center max-h'>
           <Header />
-
-          <div className='col-12 img'>
-            <img src={logo} className='App-logo mt-5' alt='logo' />
+          <div className='col-12 col-md-6 img'>
+            <img src={logo} className='App-logo m-3' alt='logo' />
           </div>
 
-          <div className='col-12 link'>
-            {/* <a
-              className='App-link'
-              href='https://www.scanhere.app/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-                  ScanHere App
-            </a> */}
+          <div className='col-12 col-md-6 link'>
             <Link to='/login' exact>
               <button type='button' className='px-4 button py-2'>Login</button>
             </Link>

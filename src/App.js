@@ -11,6 +11,8 @@ import Login from './pages/Login'
 import SigIn from './pages/SignUp'
 import FormProducts from './pages/FormProducts'
 import FormPromo from './pages/FormPromo'
+import Promos from './pages/Promos'
+import AlbumQr from './pages/Album-QR'
 
 function App () {
   return (
@@ -32,6 +34,10 @@ function App () {
           <Route exact path='/addPromo'>
             <FormPromo />
           </Route>
+          <Route exact path='/promos'>
+            <Promos />
+          </Route>
+          <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
         </Switch>
       </div>
     </Router>
