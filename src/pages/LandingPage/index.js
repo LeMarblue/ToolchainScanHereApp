@@ -30,7 +30,9 @@ export default class index extends Component {
                   </div>
                   <div className="col-6 col-md-8 text">
                       <div className="d-flex justify-content-end">
+                        <Link to='/signin'>
                           <a href="#"className="mx-1 mx-md-3">Sign in</a>
+                        </Link>
                       </div>
                   </div>    
               </header>

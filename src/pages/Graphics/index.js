@@ -4,6 +4,7 @@ import Dougnut from '../../Components/DougnutChart'
 // import Mixed from '../../Components/Mix'
 // import AreaParams from '../../Components/AreaChartParams'
 import './Admin.scss'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 
 export default class Admin extends React.Component {
@@ -26,6 +27,7 @@ export default class Admin extends React.Component {
             <Mixed promo_id={id}/>
           </div> */}
         </div>
+        <NavBarAdmin/>
       </div>
     );
   }
