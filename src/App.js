@@ -31,9 +31,7 @@ function App () {
             <Promos />
           </Route>
           <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
-          <Route exact path='/scan-qr'>
-            <ScanQr />
-          </Route>
+          <Route exact path='/album-qr/:promotionId/scan-qr' component={ScanQr} />
         </Switch>
       </div>
     </Router>
