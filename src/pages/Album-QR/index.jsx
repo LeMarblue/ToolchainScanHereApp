@@ -50,6 +50,7 @@ export default class AlbumQr extends Component {
     if (roll === 'admin') {
       return <Redirect to='/promos' />
     }
+
     return (
       <div className='container album-qr'>
         <PromotionData
