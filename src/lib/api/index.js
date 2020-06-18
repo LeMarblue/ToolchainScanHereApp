@@ -95,10 +95,35 @@ async function login (userData) {
   }
 }
 
+async function postScan (qr, promotionId, token) {
+  try {
+    const response = await fetch(`${urlBase}/scans`, {
+      method: 'POST',
+      headers: {
+        Authorization: token,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        qr,
+        promotionId
+      })
+    })
+    const parsedJson = await response.json()
+    if (!parsedJson.success) {
+      throw Error(parsedJson.error)
+    }
+    return parsedJson.data.scan
+  } catch (error) {
+    console.error(error.message)
+    throw error
+  }
+}
+
 module.exports = {
   getAllPromotions,
   getPromotionById,
   getPromotionsScansByUser,
+  postScan,
   signup,
   login
 }

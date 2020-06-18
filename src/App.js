@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import SignIn from './pages/SignIn'
 import Promos from './pages/Promos'
 import AlbumQr from './pages/Album-QR'
+import ScanQr from './pages/scaner-Qr'
 
 function App () {
   return (
@@ -30,6 +31,7 @@ function App () {
             <Promos />
           </Route>
           <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
+          <Route exact path='/album-qr/:promotionId/scan-qr' component={ScanQr} />
         </Switch>
       </div>
     </Router>
