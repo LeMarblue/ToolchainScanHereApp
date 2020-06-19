@@ -46,8 +46,6 @@ export default class PromoForm extends Component {
   }
   // arrayvar: this.state.arrayvar.concat([newelement])
   handlerInput ({ target: { name, value } }) {
-    console.log(name)
-    console.log(value)
     if (name == "") {
 
       this.setState({
@@ -61,8 +59,6 @@ export default class PromoForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    console.log("estadooo")
-    console.log(this.state)
     const { Premio, productInfo, Inicio, Fin, Escaneos } = this.state;
 
     const data = {

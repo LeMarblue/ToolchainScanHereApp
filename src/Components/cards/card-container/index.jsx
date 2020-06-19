@@ -6,7 +6,6 @@ import './card-container.css'
 
 export default function CardContainer (props) {
   const { children, id } = props
-  console.log('cardContainer:', props)
   return (
     <>
       {

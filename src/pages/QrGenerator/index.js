@@ -39,7 +39,6 @@ export default class QrGenerator extends React.Component {
   }
 
   handleInput ({ target: { name, value } }) {
-    console.log(value)
     this.setState({
       selectedProduct: value
     })
