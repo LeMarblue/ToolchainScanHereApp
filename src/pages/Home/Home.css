@@ -16,10 +16,12 @@ body {
 }
 
 .button {
-  background-image: linear-gradient(#B93ABC, #157CF5);
+  background-color: #B93ABC;
+  border-color:  #B93ABC ;
   width: 90%;
   border-radius: 15px;
   margin-bottom: 20px;
+  color: white;
 } 
 
 /* .imgsh{
