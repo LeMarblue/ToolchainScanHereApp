@@ -4,6 +4,7 @@ import api from '../../lib/api'
 import PromotionData from './components/promotion-data'
 import AlbumLayout from './components/album-layout'
 import { Redirect } from 'react-router-dom'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 export default class AlbumQr extends Component {
   constructor (props) {
@@ -63,6 +64,7 @@ export default class AlbumQr extends Component {
           promotionId={this.state.promotionId}
           totalScans={this.state.promotion.numberOfScans}
         />
+        <NavBarAdmin/>
       </div>
     )
   }

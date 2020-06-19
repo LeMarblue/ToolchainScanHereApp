@@ -8,6 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Graphics from './pages/Graphics'
+import PagePromoList from './pages/Promo-List'
+import QrGenerator from './pages/QrGenerator'
+import PromoForm from './pages/PromoForm'
+import ProductForm from './pages/ProductForm'
+import Landing from './pages/LandingPage'
 import SignIn from './pages/SignIn'
 import Promos from './pages/Promos'
 import AlbumQr from './pages/Album-QR'
@@ -18,13 +24,27 @@ function App () {
     <Router>
       <div className='App'>
         <Switch>
-          <Route exact path='/'>
-            <Home />
+        <Route exact path='/'>
+            <Landing/>
           </Route>
           <Route exact path='/login'>
             <Login />
           </Route>
-          <Route exact path='/sigin'>
+          <Route exact path='/promo-list'>
+            <PagePromoList />
+          </Route>
+          <Route exact path='/graphics/:id' render={(props) => <Graphics  {...props} />} />
+
+          <Route exact path='/qrGenerator'>
+            <QrGenerator />
+          </Route>
+          <Route exact path='/promo-form'>
+            <PromoForm />
+          </Route>
+          <Route exact path='/product-form'>
+            <ProductForm />
+          </Route>
+          <Route exact path='/signin'>
             <SignIn />
           </Route>
           <Route exact path='/promos'>

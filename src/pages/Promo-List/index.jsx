@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import PagePromoListTitle from './components/title'
 import CardList from '../../Components/cards/cards-wrapper'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 import api from '../../lib/api'
 
@@ -45,6 +46,7 @@ export default class PagePromoList extends Component {
         <div className='row'>
           <CardList cardsPromos={this.state.promoList} />
         </div>
+        <NavBarAdmin/>
       aqui irian los botones
       </div>
     )

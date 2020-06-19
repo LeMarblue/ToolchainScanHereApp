@@ -5,6 +5,7 @@ import api from '../../lib/api'
 
 import Header from '../../Components/Header'
 import CardGradiantContainer from '../Promo-Qr-List/components/cards/cards-gradiant-container'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 // css
 
 export default class ScanQr extends Component {

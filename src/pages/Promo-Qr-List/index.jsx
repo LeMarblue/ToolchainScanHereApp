@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 // css
 import './page-promo-qr-list.css'
 import CardsQrWrapper from './components/cards/cards-qr-wrapper'
-
+// import NavBarUser from '../../Components/NavBarUser'
 import api from '../../lib/api'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 export default class PagePromoQrlist extends Component {
   constructor (props) {
@@ -41,6 +42,7 @@ export default class PagePromoQrlist extends Component {
         <div className='row'>
           <CardsQrWrapper cardsPromos={this.state.promoList} isUser />
         </div>
+        <NavBarAdmin/>
       aqui irian los botones
       </div>
     )

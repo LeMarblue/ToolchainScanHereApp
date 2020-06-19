@@ -3,6 +3,7 @@ import Header from '../../Components/Header'
 import Inputs from './components/inputs'
 import api from '../../lib/api'
 import { Redirect } from 'react-router-dom'
+import NavBarUser from '../../Components/NavBarAdmin'
 
 // css
 import './SignIn.css'
@@ -95,6 +96,7 @@ export default class SignIn extends Component {
             </form>
           </div>
         </div>
+        <NavBarUser />
       </div>
     )
   }
