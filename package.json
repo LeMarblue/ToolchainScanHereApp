@@ -7,8 +7,12 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.0",
+<<<<<<< HEAD
     "chart.js": "^2.9.3",
     "node-sass": "^4.14.1",
+=======
+    "moment": "^2.26.0",
+>>>>>>> 4b0dbad5ba129560474b413a545f12d269da8673
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-chartjs-2": "^2.9.0",
@@ -24,6 +28,11 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "standard": {
+    "globals": [
+      "fetch"
+    ]
   },
   "browserslist": {
     "production": [

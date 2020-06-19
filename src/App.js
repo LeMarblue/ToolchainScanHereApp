@@ -8,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import Admin from './pages/Admin'
-import DankMemes from "./Components/AreaChart";
+import PagePromoList from './pages/Promo-List'
 
 function App () {
   return (
@@ -21,6 +20,9 @@ function App () {
           </Route>
           <Route exact path='/login'>
             <Login />
+          </Route>
+          <Route exact path='/promo-list'>
+            <PagePromoList />
           </Route>
           {/* <Route exact path='/sigin'>
             <SigIn />
