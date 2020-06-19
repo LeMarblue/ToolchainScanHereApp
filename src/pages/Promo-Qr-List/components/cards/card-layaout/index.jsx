@@ -1,6 +1,5 @@
 import React from 'react'
 import CardTitle from '../../../../../Components/cards/card-title'
-import Logo from '../../../../../scanhere.svg'
 import PromoDateAndScanNumber from '../date-scans'
 
 // css
@@ -16,10 +15,7 @@ export default function CardLayaout (props) {
           data={titleData.data}
         />
       </div>
-      <div className='col-4'>
-        <img src={Logo} alt='scanLogo' />
-      </div>
-      <div className='col-8'>
+      <div className='col-12'>
         <PromoDateAndScanNumber
           promoStarts={promoData.promoStarts}
           numberOfScans={promoData.numberOfScans}

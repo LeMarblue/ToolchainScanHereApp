@@ -84,7 +84,7 @@ export default class SignIn extends Component {
                   <Inputs labelName='Hombre' labelfor='Hombre' name='gender' type='radio' onClick={this.handleInputOnChange} value='male' />
                 </div>
                 <div className='col-2'>
-                  <Inputs labelName='noBinary' labelfor='noBinary' name='gender' type='radio' onClick={this.handleInputOnChange} value='noBinary' />
+                  <Inputs labelName='No binario' labelfor='No binario' name='gender' type='radio' onClick={this.handleInputOnChange} value='noBinary' />
                 </div>
               </div>
               <div className='row d-flex justify-content-center'>
