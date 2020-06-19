@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "../../Components/Header";
 import { getProducts,createPromo} from '../../services/admin'
 import NavBarAdmin from '../../Components/NavBarAdmin'
-
+import Inputs from '../SignIn/components/inputs'
 
 export default class PromoForm extends Component {
   constructor(props) {
@@ -94,15 +94,16 @@ export default class PromoForm extends Component {
           <Header
           />
           <div>
-            <form onSubmit={this.handleSubmit} className='border border-black p-5 shadow p-3 mb-5 bg-white rounded'>
+            <form onSubmit={this.handleSubmit} className=' p-5 p-3 mb-5 '>
               <div className="row ">
                   <div className="col-12 "> 
-                  <input
+                  <Inputs
                     type='number'
                     placeholder={"Numero de escaneos"}
                     value={numberOfScans}
                     onChange={this.handlerInput}
                     name={"numberOfScans"}
+                    labelfor='Numero de escaneos' 
                   />
                   </div>
                   <div className="col-12 d-flex justify-content-center "> 
@@ -114,30 +115,33 @@ export default class PromoForm extends Component {
                   </select>
                   </div>
                   <div className="col-12 "> 
-                  <input
+                  <Inputs
                     type='date' id='start' name='trip-start' min='2020-06-17' max='2020-12-31'
                     placeholder={"MXN"}
                     value={promoStarts}
                     onChange={this.handlerInput}
                     name={"promoStarts"}
+                    labelfor='Inicio de promoción' 
                   />
                   </div>
                   <div className="col-12 "> 
-                  <input
+                  <Inputs
                     type='date' id='end' name='trip-end' min='2020-06-17' max='2020-12-31'
                     placeholder={"Start"}
                     value={promoEnds}
                     onChange={this.handlerInput}
                     name={"promoEnds"}
+                    labelfor='Fin de promoción' 
                   />
                   </div>
                   <div className="col-12 "> 
-                  <input
+                  <Inputs
                     type='string'
                     placeholder={"Premio"}
                     value={prize}
                     onChange={this.handlerInput}
                     name={"prize"}
+                    labelfor='Premio' 
                   />
                   </div>
                   <div className="col-12 d-flex justify-content-center"> 
