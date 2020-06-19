@@ -88,8 +88,6 @@ export default class PromoForm extends Component {
 
   render() {
     const { prize,promoEnds,promoStarts, numberOfScans, productInfo } = this.state;
-    console.log("product")
-    console.log(productInfo)
     return (
       <div className="Container">
         <div>
