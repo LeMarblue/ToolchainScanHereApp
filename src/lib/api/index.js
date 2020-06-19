@@ -58,7 +58,7 @@ async function signup (newUserData) {
     const parsedData = {
       name: newUserData.Nombre,
       email: newUserData.Email,
-      password: newUserData.Contrasena,
+      password: newUserData.password,
       city: newUserData.Ciudad,
       age: newUserData.Edad,
       gender: newUserData.gender
@@ -85,7 +85,7 @@ async function login (userData) {
   try {
     const parsedData = {
       email: userData.Email,
-      password: userData.Contrasena
+      password: userData.password
     }
     const response = await fetch(`${urlBase}/auth/login`, {
       method: 'POST',

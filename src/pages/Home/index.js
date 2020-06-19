@@ -22,11 +22,11 @@ export default class index extends Component {
 
           <div className='col-12 col-md-6 link'>
             <Link to='/login' exact>
-              <button type='button' className='px-4 button py-2'>Login</button>
+              <button type='button' className='px-4 button py-2'>Inicia Sesión</button>
             </Link>
 
             <Link to='/sigin' exact>
-              <button type='button' className='px-4 button py-2'>Sign up</button>
+              <button type='button' className='px-4 button py-2'>Regístrate</button>
             </Link>
           </div>
         </div>
