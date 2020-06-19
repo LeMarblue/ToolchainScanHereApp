@@ -7,6 +7,7 @@ import './page-promo-qr-list.css'
 import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 import api from '../../lib/api'
 import Header from '../../Components/Header'
+import { Redirect } from 'react-router-dom'
 
 export default class PagePromoQrlist extends Component {
   constructor (props) {
@@ -33,6 +34,12 @@ export default class PagePromoQrlist extends Component {
   }
 
   render () {
+    const token = localStorage.getItem('authUserToken')
+    if (!token) {
+      return (
+        <Redirect to='/login' />
+      )
+    }
     return (
       <div className='container page-promo-list'>
         <Header />

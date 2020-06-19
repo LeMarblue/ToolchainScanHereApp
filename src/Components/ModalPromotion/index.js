@@ -1,14 +1,13 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class Modal extends Component {
 
-    constructor(props){
-        
+    constructor (props) {
+
         super(props)
     }
-    render() {
+    render () {
         const showHideClassName = this.props.show ? "modal display-block" : "modal display-none";
-        console.log(showHideClassName)
         return (
             <div className={showHideClassName}>
                 <section className='modal-main'>

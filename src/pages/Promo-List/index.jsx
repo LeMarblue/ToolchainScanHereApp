@@ -4,11 +4,11 @@ import PagePromoListTitle from './components/title'
 import CardList from '../../Components/cards/cards-wrapper'
 import NavBarAdmin from '../../Components/NavBarAdmin'
 import Header from '../../Components/Header'
-
 import api from '../../lib/api'
 
 // css
 import './promo-list.css'
+import { Redirect } from 'react-router-dom'
 
 export default class PagePromoList extends Component {
   constructor (props) {
@@ -37,6 +37,12 @@ export default class PagePromoList extends Component {
   }
 
   render () {
+    const token = localStorage.getItem('authUserToken')
+    if (!token) {
+      return (
+        <Redirect to='/login' />
+      )
+    }
     return (
       <div className='container page-promo-list'>
         <Header />

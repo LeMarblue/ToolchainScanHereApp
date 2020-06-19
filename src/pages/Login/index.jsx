@@ -12,7 +12,7 @@ export default class Login extends Component {
     super(props)
     this.state = {
       Email: '',
-      Contrasena: '',
+      password: '',
       error: null,
       isLogedIn: false
     }
@@ -28,6 +28,9 @@ export default class Login extends Component {
   }
 
   handleInputOnChange ({ target: { value, name } }) {
+    if (name === 'Contraseña') {
+      name = 'password'
+    }
     this.setState({
       [name]: value
     })
@@ -74,10 +77,10 @@ export default class Login extends Component {
           <div className='col-12 col-md-8 p-3'>
             <form>
               <Inputs name='Email' labelfor='Email' placeholder='tu@email.com' min='3' type='email' value={this.state.email} onChange={this.handleInputOnChange} />
-              <Inputs name='Contrasena' labelfor='Contrasena' placeholder='123456' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
+              <Inputs name='Contraseña' labelfor='Contraseña' placeholder='123456' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
               <div className='row d-flex justify-content-center'>
                 <div className='col-6'>
-                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>Iniciar Sesion</button>
+                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>Iniciar Sesión</button>
                 </div>
               </div>
             </form>

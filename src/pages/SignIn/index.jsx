@@ -13,7 +13,7 @@ export default class SignIn extends Component {
     this.state = {
       Nombre: '',
       Email: '',
-      Contrasena: '',
+      password: '',
       Ciudad: '',
       Edad: '',
       gender: '',
@@ -32,6 +32,9 @@ export default class SignIn extends Component {
   }
 
   handleInputOnChange ({ target: { value, name } }) {
+    if (name === 'Contraseña') {
+      name = 'password'
+    }
     this.setState({
       [name]: value
     })
@@ -64,14 +67,14 @@ export default class SignIn extends Component {
         <div className='row container-form justify-content-center container-form'>
           <div className='col-12 col-md-8 p-3'>
             <h2 className='title-pages'>
-              Registrate
+              Regístrate
             </h2>
           </div>
           <div className='col-12 col-md-8 p-3'>
             <form>
               <Inputs name='Nombre' labelFor='Nombre' placeholder='Nombre' min='3' type='text' value={this.state.name} onChange={this.handleInputOnChange} />
               <Inputs name='Email' labelFor='Email' placeholder='tu@email.com' min='3' type='email' value={this.state.email} onChange={this.handleInputOnChange} />
-              <Inputs name='Contrasena' labelFor='Contrasena' placeholder='Cont***' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
+              <Inputs name='Contraseña' labelFor='Contraseña' placeholder='Cont***' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
               <Inputs name='Ciudad' labelFor='Ciudad' type='text' value={this.state.city} onChange={this.handleInputOnChange} />
               <Inputs name='Edad' labelFor='Edad' max='83' min='18' type='number' value={this.state.age} onChange={this.handleInputOnChange} />
               <div className='row m-0 d-flex justify-content-between justify-content-md-center'>
@@ -87,7 +90,7 @@ export default class SignIn extends Component {
               </div>
               <div className='row d-flex justify-content-center'>
                 <div className='col-6'>
-                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>Registrarse</button>
+                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>Regístrarse</button>
                 </div>
               </div>
             </form>

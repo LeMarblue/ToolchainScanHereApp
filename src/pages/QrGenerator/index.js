@@ -1,10 +1,11 @@
-import React  from 'react'
+import React from 'react'
 import Header from '../../Components/Header'
 import './qrGenerator.scss'
-import { getProducts} from '../../services/admin'
+import { getProducts } from '../../services/admin'
 import QRCode from 'qrcode.react'
 import uniqid from 'uniqid'
 import NavBarAdmin from '../../Components/NavBarAdmin'
+import { Redirect } from 'react-router-dom'
 export default class QrGenerator extends React.Component {
   constructor (props) {
     super(props)
@@ -17,12 +18,9 @@ export default class QrGenerator extends React.Component {
     this.handleInput = this.handleInput.bind(this)
   }
 
-
-
   async componentDidMount () {
     try {
       const token = localStorage.getItem('authUserToken')
-      //const response = await getProducts(token)
       const response = await getProducts(token)
       const dataResponse = await response.json()
       this.setState({
@@ -35,54 +33,57 @@ export default class QrGenerator extends React.Component {
 
   _renderProducts () {
     const { products } = this.state
-    return products.map(({ productName,sku}, index) => (
+    return products.map(({ productName, sku }, index) => (
       <option value={sku}>Nombre: {productName} , SKU:{sku}</option>
     ))
   }
 
   handleInput ({ target: { name, value } }) {
-    console.log(value);
     this.setState({
-      selectedProduct: value,
+      selectedProduct: value
     })
   }
 
-  render() {
-    const myObj = { id: uniqid(), sku: this.state.selectedProduct  }
+  render () {
+    const token = localStorage.getItem('authUserToken')
+    if (!token) {
+      return (
+        <Redirect to='/login' />
+      )
+    }
+    const myObj = { id: uniqid(), sku: this.state.selectedProduct }
     const objAsString = JSON.stringify(myObj)
     const encriptedObj = btoa(objAsString)
     return (
       <div>
-        <Header/>
+        <Header />
         <div className='row '>
           <div className='col-lg-6 d-flex justify-content-center'>
-            <div className="products  ">
-            <select className="form-control form-control-sm" id="selectOptios" onChange={this.handleInput} value={this.state.value}>
-            <option value="none" selected disabled hidden> 
-              Selecciona una Opción
-            </option> 
-              { this._renderProducts()}
-            </select>
+            <div className='products'>
+              <select className='form-control form-control-sm' id='selectOptios' onChange={this.handleInput} value={this.state.value}>
+                <option value='none' selected disabled hidden>
+                  Selecciona una Opción
+                </option>
+                {this._renderProducts()}
+              </select>
             </div>
           </div>
           <div className='col-lg-4'>
-            <div className="qr">
-          {
-          this.state.selectedProduct ? (
-            <>
-              <QRCode includeMargin='true' value={encriptedObj} size={170} />  
-            </>
-          ) : (
-            <h1>Qr code</h1>
-          )
-          }
-          </div>
+            <div className='qr'>
+              {
+                this.state.selectedProduct ? (
+                  <>
+                    <QRCode includeMargin='true' value={encriptedObj} size={170} />
+                  </>
+                ) : (
+                    <h1>Codigo Qr</h1>
+                  )
+              }
+            </div>
           </div>
         </div>
         <NavBarAdmin />
       </div>
-    );
+    )
   }
 }
-
-
