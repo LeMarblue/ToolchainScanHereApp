@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "../../Components/Header";
 import {createProduct} from '../../services/admin'
+import NavBarAdmin from '../../Components/NavBarAdmin'
+import Input from '../../pages/SignIn/components/inputs'
 
 export default class ProductForm extends Component {
   constructor(props) {
@@ -31,7 +33,8 @@ export default class ProductForm extends Component {
       price,
       currency
     }
-    const response = await createProduct(data)
+    const token = localStorage.getItem('authUserToken')
+    const response = await createProduct(data,token)
     const responseJSON = await response.json()
     if (responseJSON.success) {
       this.setState({
@@ -101,6 +104,7 @@ export default class ProductForm extends Component {
           </div>
           
         </div>
+        <NavBarAdmin/>
       </div>
     );
   }

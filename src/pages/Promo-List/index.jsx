@@ -47,7 +47,6 @@ export default class PagePromoList extends Component {
           <CardList cardsPromos={this.state.promoList} />
         </div>
         <NavBarAdmin/>
-      aqui irian los botones
       </div>
     )
   }

@@ -33,6 +33,9 @@ export default class index extends Component {
                         <Link to='/signin'>
                           <a href="#"className="mx-1 mx-md-3">Sign in</a>
                         </Link>
+                        <Link to='/login'>
+                          <a href="#"className="mx-1 mx-md-3">Log in</a>
+                        </Link>
                       </div>
                   </div>    
               </header>

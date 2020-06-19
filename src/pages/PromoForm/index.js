@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Header from "../../Components/Header";
 import { getProducts,createPromo} from '../../services/admin'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 
 
 export default class PromoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      sku:"",
       productInfo:[],
       numberOfScans:0,
       promoStarts:"",
@@ -23,9 +25,9 @@ export default class PromoForm extends Component {
 
   async componentDidMount () {
     try {
-      //const token = window.localStorage.getItem('authToken')
+      const token = window.localStorage.getItem('authUserToken')
       //const response = await getProducts(token)
-      const response = await getProducts()
+      const response = await getProducts(token)
       const dataResponse = await response.json()
       this.setState({
         products: dataResponse.data.product
@@ -41,23 +43,37 @@ export default class PromoForm extends Component {
       <option value={_id}>Nombre: {productName} , SKU:{sku}</option>
     ))
   }
-
+  // arrayvar: this.state.arrayvar.concat([newelement])
   handlerInput({ target: { name, value } }) {
+    console.log(name)
+    console.log(value)
+    if (name==""){
+
+      this.setState({
+        productInfo: [value],
+      });
+    }
     this.setState({
       [name]: value,
     });
   }
 
-  async handleSubmit (event) {
+  handleSubmit = async (event) => {
     event.preventDefault()
-    const { currency, price, sku, productName } = this.state;
+    console.log("estadooo")
+    console.log(this.state)
+    const {  prize, productInfo, promoStarts, promoEnds,numberOfScans} = this.state;
+
     const data = {
-      productName,
-      sku,
-      price,
-      currency
+      numberOfScans,
+      productInfo,
+      prize,
+      promoStarts,
+      promoEnds,
+      state:"activo"
     }
-    const response = await createPromo(data)
+    const token = localStorage.getItem('authUserToken')
+    const response = await createPromo(data,token)
     const responseJSON = await response.json()
     if (responseJSON.success) {
       this.setState({
@@ -90,7 +106,7 @@ export default class PromoForm extends Component {
                   />
                   </div>
                   <div className="col-12 d-flex justify-content-center "> 
-                  <select className="form-control form-control-sm" id="selectOptios" onChange={this.handleInput} value={this.state.value}>
+                  <select className="form-control form-control-sm" id="selectOptios" onChange={this.handlerInput} value={this.state.value}>
                     <option value="none" selected disabled hidden> 
                       Escoje un Producto
                     </option> 
@@ -127,7 +143,7 @@ export default class PromoForm extends Component {
                   <div className="col-12 d-flex justify-content-center"> 
                   {/* <div className='row d-flex justify-content-center'>
                     <div className='col-6'> */}
-                      <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>REGISTRAR PROMOCIÓN</button>
+                      <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleSubmit}>REGISTRAR PROMOCIÓN</button>
                     {/* </div>
                   </div> */}
 
@@ -136,6 +152,7 @@ export default class PromoForm extends Component {
             </form>
           </div>
         </div>
+        <NavBarAdmin/>
       </div>
     );
   }
