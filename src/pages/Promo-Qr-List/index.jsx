@@ -35,9 +35,7 @@ export default class PagePromoQrlist extends Component {
   render () {
     return (
       <div className='container page-promo-list'>
-        <div className='row'>
-          <Header />
-        </div>
+        <Header />
         <div className='row'>
           <div className='col-12 my-3'>
             <h1>¡Promociones!</h1>

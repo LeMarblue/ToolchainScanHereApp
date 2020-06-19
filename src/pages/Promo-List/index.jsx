@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PagePromoListTitle from './components/title'
 import CardList from '../../Components/cards/cards-wrapper'
 import NavBarAdmin from '../../Components/NavBarAdmin'
+import Header from '../../Components/Header'
 
 import api from '../../lib/api'
 
@@ -38,15 +39,16 @@ export default class PagePromoList extends Component {
   render () {
     return (
       <div className='container page-promo-list'>
+        <Header />
         <div className='row'>
-          <div className='col-12'>
+          <div className='col-12 py-3'>
             <PagePromoListTitle />
           </div>
         </div>
         <div className='row'>
           <CardList cardsPromos={this.state.promoList} />
         </div>
-        <NavBarAdmin/>
+        <NavBarAdmin />
       </div>
     )
   }

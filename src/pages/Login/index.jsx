@@ -57,9 +57,7 @@ export default class Login extends Component {
     }
     return (
       <div className='container-login'>
-        <div className='row container-form'>
-          <Header />
-        </div>
+        <Header />
         <div className='row container-form justify-content-center container-form'>
           <div className='col-12 col-md-8 p-3'>
             <h2>

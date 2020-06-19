@@ -78,9 +78,7 @@ export default class ScanQr extends Component {
 
     return (
       <div className='container'>
-        <div className='row'>
-          <Header />
-        </div>
+        <Header />
         <div className='row'>
           <div className='col-12'>
             <h1 className='px-3'>

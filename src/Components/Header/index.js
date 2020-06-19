@@ -6,7 +6,13 @@ import {
 } from 'react-router-dom'
 
 export default class Header extends Component {
+  handleOnClick () {
+    localStorage.removeItem('authUserToken')
+    window.location.reload()
+  }
+
   render () {
+    const token = localStorage.getItem('authUserToken')
     return (
       <div className='row'>
         <div className='col-5 my-3 '>
@@ -16,7 +22,11 @@ export default class Header extends Component {
         </div>
         <div className='col-3' />
         <div className='col-3 my-3'>
-          <button type='submit' className='m-3 px-4 btn btn-outline-secondary py-2'>CERRAR SESIÓN</button>
+          {
+            token && (
+              <button type='submit' className='m-3 px-4 btn btn-outline-secondary py-2' onClick={this.handleOnClick}>CERRAR SESIÓN</button>
+            )
+          }
         </div>
         <div className='col-1' />
       </div>
