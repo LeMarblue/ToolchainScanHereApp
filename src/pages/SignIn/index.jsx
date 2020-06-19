@@ -96,7 +96,6 @@ export default class SignIn extends Component {
             </form>
           </div>
         </div>
-        <NavBarUser />
       </div>
     )
   }

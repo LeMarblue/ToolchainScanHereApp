@@ -31,10 +31,10 @@ export default class index extends Component {
                   <div className="col-6 col-md-8 text">
                       <div className="d-flex justify-content-end">
                         <Link to='/signin'>
-                          <a href="#"className="mx-1 mx-md-3">Sign in</a>
+                          <a href="#"className="mx-1 mx-md-3 sign">Sign Up</a>
                         </Link>
                         <Link to='/login'>
-                          <a href="#"className="mx-1 mx-md-3">Log in</a>
+                          <a  href="#"className="mx-1 mx-md-3 log">Log In</a>
                         </Link>
                       </div>
                   </div>    
@@ -45,9 +45,9 @@ export default class index extends Component {
                       <img src={HOME}alt=""/>
                   </div>
               {/* </div>  */}
-              <h2 className='pb-3'>Administra tus promociones facíl y rapido,<br/> accesible donde sea.</h2>
-              <p className='pb-3'>Scan Here te ayuda a crear y gestionar promociones para tu empresa o noegocio.<br/>
-              Tendras acceso al comportamiento de tus promociones de manera inmediata<br/>y donde sea que te encuentres</p>
+              <h2 className='pb-3 Administra'>Administra tus promociones facíl y rapido,<br/> accesible donde sea.</h2>
+              <p className='pb-3'>Scan Here te ayuda a crear y gestionar promociones para tu empresa o negocio.<br/>
+              Tendras acceso al comportamiento de tus promociones de manera inmediata<br/>y donde sea que te encuentres.</p>
           </div>
           
       </div>
@@ -60,32 +60,32 @@ export default class index extends Component {
               <div className="col-12 col-md-6">
                   <div className="d-flex flex-column services">
                       <img src={cupon} className="rounded mx-auto d-block" alt=""/>
-                      <h5>Crea Promociones facíl y rapido</h5>
-                      <p>Da de alta productos y premios para tus promociones, conoce cuantos escaneos lleva tu promocion, al instante!!.</p>
+                      <h3>Crea Promociones fácil y rápido</h3>
+                      <p>Da de alta productos y premios para tus promociones, conoce cuantos escaneos lleva tu promocion, al instante.</p>
 
                   </div>
               </div>
               <div className="col-12 col-md-6">
                   <div className="d-flex flex-column services">
                       <img src={charts} className="rounded mx-auto d-block" alt=""/>
-                      <h5>Gráficas fáciles de entender</h5>
-                      <p>Tendras el conteo al instante de los escaneos de tus promociones, tendrás conteos por producto, y conteos por día!</p>
+                      <h3>Gráficas fáciles de entender</h3>
+                      <p>Tendras el conteo al instante de los escaneos de tus promociones, tendrás conteos por producto, y conteos por día.</p>
       
                   </div>
               </div>
               <div className="col-12 col-md-6">
                   <div className="d-flex flex-column services">
                       <img src={escaneo} className="rounded mx-auto d-block" alt=""/>
-                      <h5>Escaneos faciles pára tus usuarios</h5>
-                      <p>Un flujo facil de entender, tus usuarios tendran un seguimiento de sus escaneos y promociones realizadas.</p>
+                      <h3>Escaneos fáciles para tus usuarios</h3>
+                      <p>Un flujo fácil de entender, tus usuarios tendrán un seguimiento de sus escaneos y promociones realizadas.</p>
 
                   </div>
               </div>
               <div className="col-12 col-md-6">
                   <div className="d-flex flex-column services">
                       <img src={codigoqr}  className="rounded mx-auto d-block" alt=""/>
-                      <h5>Códigos QR únicos</h5>
-                      <p>Los codigos que usa Scan Here son únicos, lo que permite que solo se pueda escanear un producto a la vez, y evitar fraudes o que mas de un usuario escaenee el mismo producto.</p>
+                      <h3>Códigos QR únicos</h3>
+                      <p>Los códigos que usa Scan Here son únicos, lo que permite que solo se pueda escanear un producto a la vez, y evitar fraudes o que mas de un usuario escanee el mismo producto.</p>
 
                   </div>
               </div>
@@ -105,10 +105,10 @@ export default class index extends Component {
                   <div className="my-auto d-flex flex-column">
                       <h5>Administra tus promociones, donde te encuentres</h5>
                       <p>Como administrador, ScanHere te permite dar de alta productos y crear promociones.
-                        Tambien puedes ver mediante graficas el desempeño de tu promocion.
+                        También puedes ver mediante gráficas el desempeño de tu promoción.
                       </p>
                       <p>
-                      ScanHere te muestra los conteos de escaneos por producto y por promocion.
+                      ScanHere te muestra los conteos de escaneos por producto y por promoción.
                       </p>
                   </div>
               </div>
@@ -120,16 +120,16 @@ export default class index extends Component {
           <div className="row user">
             <div className="col-12 col-md-6 d-flex justify-content-center" >
                 <div className="my-auto d-flex flex-column">
-                    <h5>Tus usuarios podrán escanear y ganar premios facilmente!</h5>
+                    <h5>¡Tus usuarios podrán escanear y ganar premios facilmente!</h5>
                     <p>
                       {/* <!-- Tú decides cuántos escaneos. 
                       Cuando los juntan, ganan. 
                       Como un álbum de estampas --> */}
-                      ScanHere es una app donde tus usuarios podran escanear tus productos 
+                      ScanHere es una app donde tus usuarios podrán escanear tus productos 
                       y participar en tus promociones.
                     </p>
                     <p>
-                    Es como llenar un album de estampas.
+                    Es como llenar un álbum de estampas.
                   </p>
                 </div>
             </div>
@@ -156,7 +156,9 @@ export default class index extends Component {
                       <a href="#">+52-777-157-72-73</a>
                   </div>   
               </div>
-              <div className="row d-flex justify-content-center">
+            </div>
+            <div className="col-12 col-md-4 contactos">
+            <div className="row d-flex justify-content-center">
                   <div className="iconos">
                       <img src={email} alt=""/>
                   </div> 
@@ -165,7 +167,7 @@ export default class index extends Component {
                   </div>   
                     
               </div>
-            </div>
+              </div>
           {/* <div className="col-12 col-md-4 redes d-flex justify-content-around">
             <a href="#"><i className="fab fa-facebook-f"></i></a>
             <a href="#"><i className="fab fa-twitter"></i></a>
