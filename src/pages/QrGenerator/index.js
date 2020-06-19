@@ -48,8 +48,8 @@ export default class QrGenerator extends React.Component {
   }
 
   render() {
-    //const myObj = { id: uniqid(), sku: this.state.selectedProduct  }
-    const myObj = { id: uniqid(), sku: "abcjk127"  }
+    const myObj = { id: uniqid(), sku: this.state.selectedProduct  }
+    //const myObj = { id: uniqid(), sku: "abcjk127"  }
     const objAsString = JSON.stringify(myObj)
     const encriptedObj = btoa(objAsString)
     return (
