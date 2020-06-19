@@ -11,8 +11,8 @@ export default class Login extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      email: '',
-      password: '',
+      Email: '',
+      Contrasena: '',
       error: null,
       isLogedIn: false
     }
@@ -63,7 +63,7 @@ export default class Login extends Component {
         <div className='row container-form justify-content-center container-form'>
           <div className='col-12 col-md-8 p-3'>
             <h2>
-              logIn
+              Inicia Sesión
             </h2>
           </div>
           {
@@ -75,11 +75,11 @@ export default class Login extends Component {
           }
           <div className='col-12 col-md-8 p-3'>
             <form>
-              <Inputs name='email' labelfor='email' placeholder='tu@email.com' min='3' type='email' value={this.state.email} onChange={this.handleInputOnChange} />
-              <Inputs name='password' labelfor='password' placeholder='123456' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
+              <Inputs name='Email' labelfor='Email' placeholder='tu@email.com' min='3' type='email' value={this.state.email} onChange={this.handleInputOnChange} />
+              <Inputs name='Contrasena' labelfor='Contrasena' placeholder='123456' min='8' type='password' value={this.state.password} onChange={this.handleInputOnChange} />
               <div className='row d-flex justify-content-center'>
                 <div className='col-6'>
-                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>LogIn</button>
+                  <button type='submit' className='m-3 px-4 button py-2' onClick={this.handleButton}>Iniciar Sesion</button>
                 </div>
               </div>
             </form>
