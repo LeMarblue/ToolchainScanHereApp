@@ -5,13 +5,13 @@ import {
   Link
 } from 'react-router-dom'
 
-export default class Login extends Component {
+export default class Header extends Component {
   render () {
     return (
       <div className='row'>
         <div className='col-5 my-3 '>
           <Link to='/'>
-            <img src={sh} className='rounded mx-auto d-block mt-2' alt='igsh' />
+            <img src={sh} className='rounded mx-auto d-block mt-2' alt='scanHerelogo' />
           </Link>
         </div>
         <div className='col-3' />
