@@ -4,6 +4,7 @@ import './qrGenerator.scss'
 import { getProducts} from '../../services/admin'
 import QRCode from 'qrcode.react'
 import uniqid from 'uniqid'
+import NavBarAdmin from '../../Components/NavBarAdmin'
 export default class QrGenerator extends React.Component {
   constructor (props) {
     super(props)
@@ -20,9 +21,9 @@ export default class QrGenerator extends React.Component {
 
   async componentDidMount () {
     try {
-      //const token = window.localStorage.getItem('authToken')
+      const token = localStorage.getItem('authUserToken')
       //const response = await getProducts(token)
-      const response = await getProducts()
+      const response = await getProducts(token)
       const dataResponse = await response.json()
       this.setState({
         products: dataResponse.data.product
@@ -79,6 +80,7 @@ export default class QrGenerator extends React.Component {
           </div>
           </div>
         </div>
+        <NavBarAdmin />
       </div>
     );
   }

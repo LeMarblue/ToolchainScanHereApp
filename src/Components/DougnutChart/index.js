@@ -23,7 +23,8 @@ export default class DoughnutChart extends React.Component {
   async componentDidMount () {
     const { promo_id } = this.props
     try {
-      const response = await getPromo(promo_id)
+      const token = localStorage.getItem('authUserToken')
+      const response = await getPromo(promo_id,token)
       const dataResponse = await response.json()
       this.setState({
         promotion: dataResponse.data.promotion.productInfo
@@ -35,7 +36,8 @@ export default class DoughnutChart extends React.Component {
     const listOfNames=[]
     await asyncForEach(this.state.promotion, async (element) => {
       try {
-        const response = await CountScans(element._id,promo_id)
+        const token = localStorage.getItem('authUserToken')
+        const response = await CountScans(element._id,promo_id,token)
         const dataResponse = await response.json()
         listOfScans.push(dataResponse.data.scans)
         listOfNames.push(element.productName)
