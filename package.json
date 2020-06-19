@@ -28,7 +28,9 @@
   },
   "standard": {
     "globals": [
-      "fetch"
+      "fetch",
+      "localStorage",
+      "atob"
     ]
   },
   "browserslist": {
