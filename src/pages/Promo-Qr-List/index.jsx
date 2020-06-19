@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 
 // css
 import './page-promo-qr-list.css'
-import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 // import NavBarUser from '../../Components/NavBarUser'
+
+import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 import api from '../../lib/api'
 import NavBarAdmin from '../../Components/NavBarAdmin'
+import Header from '../../Components/Header'
 
 export default class PagePromoQrlist extends Component {
   constructor (props) {
@@ -35,15 +37,14 @@ export default class PagePromoQrlist extends Component {
     return (
       <div className='container page-promo-list'>
         <div className='row'>
-          <div className='col-12'>
-            <h1>Promotions!!</h1>
-          </div>
+          <Header />
         </div>
         <div className='row'>
-          <CardsQrWrapper cardsPromos={this.state.promoList} isUser />
+          <div className='col-12 my-3'>
+            <h1>¡Promociones!</h1>
+          </div>
         </div>
-        <NavBarAdmin/>
-      aqui irian los botones
+        <CardsQrWrapper cardsPromos={this.state.promoList} isUser />
       </div>
     )
   }

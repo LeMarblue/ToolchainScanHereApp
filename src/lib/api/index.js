@@ -1,6 +1,4 @@
-const port = '8082'
-const domain = 'http://localhost'
-const urlBase = `${domain}:${port}`
+const urlBase = 'https://scanhereapi.mybluemix.net/'
 
 async function getAllPromotions (token) {
   try {

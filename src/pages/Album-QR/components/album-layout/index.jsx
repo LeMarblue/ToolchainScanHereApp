@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CardGradiantContainer from '../../../Promo-Qr-List/components/cards/cards-gradiant-container'
 import Logo from '../../../../scanhere.svg'
 import api from '../../../../lib/api'
 
@@ -47,18 +46,18 @@ export default class AlbumLayout extends Component {
         {
           this.buildAlbumArray().map((element, index) => {
             return (
-              <div className='col-4 pb-3' key={index}>
-                <CardGradiantContainer>
+              <div className='col-4 py-3 ' key={index}>
+                <div className='conteiner-stiker'>
                   {
                     element ? (
-                      <img src={Logo} alt='ScanedQR' />
+                      <img src={Logo} alt='ScanedQR' className='logo-album' />
                     )
                       : (
 
                         <img className='logo-opaque' src={Logo} alt='ScanedQR' />
                       )
                   }
-                </CardGradiantContainer>
+                </div>
               </div>
             )
           })

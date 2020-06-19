@@ -3,8 +3,6 @@
   padding: 8px;
   border-radius: 6px;
   box-shadow:6px 6px 10px black;
-  border: 4px solid transparent;
-  border-image:linear-gradient(#157CF5,#B93ABC);
   border-image-slice:1 ;
   }
   

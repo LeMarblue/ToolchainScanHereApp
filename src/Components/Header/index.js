@@ -8,12 +8,11 @@ import {
 export default class Login extends Component {
   render () {
     return (
-      <div className='col-12 '>
-        <Link to='/'> 
-        <img src={sh} className='rounded mx-auto d-block mt-2' alt='igsh' />
+      <div className='col-12 my-3'>
+        <Link to='/'>
+          <img src={sh} className='rounded mx-auto d-block mt-2' alt='igsh' />
         </Link>
       </div>
-
     )
   }
 }

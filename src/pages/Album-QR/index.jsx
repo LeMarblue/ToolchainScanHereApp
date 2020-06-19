@@ -3,9 +3,10 @@ import React, { Component } from 'react'
 import api from '../../lib/api'
 import PromotionData from './components/promotion-data'
 import AlbumLayout from './components/album-layout'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import NavBarAdmin from '../../Components/NavBarAdmin'
-
+import Header from '../../Components/Header'
+import ScanQr from '../scaner-Qr'
 export default class AlbumQr extends Component {
   constructor (props) {
     super(props)
@@ -54,6 +55,7 @@ export default class AlbumQr extends Component {
 
     return (
       <div className='container album-qr'>
+        <Header />
         <PromotionData
           currentScans={this.state.scans}
           totalScans={this.state.promotion.numberOfScans}
@@ -64,7 +66,9 @@ export default class AlbumQr extends Component {
           promotionId={this.state.promotionId}
           totalScans={this.state.promotion.numberOfScans}
         />
-        <NavBarAdmin/>
+        <Link to={this.props.match.params.promotionId + '/scan-qr'} className='m-3 px-4 button py-2 text-white'>
+          scan
+        </Link>
       </div>
     )
   }

@@ -24,8 +24,8 @@ function App () {
     <Router>
       <div className='App'>
         <Switch>
-        <Route exact path='/'>
-            <Landing/>
+          <Route exact path='/'>
+            <Landing />
           </Route>
           <Route exact path='/login'>
             <Login />
@@ -33,8 +33,7 @@ function App () {
           <Route exact path='/promo-list'>
             <PagePromoList />
           </Route>
-          <Route exact path='/graphics/:id' render={(props) => <Graphics  {...props} />} />
-
+          <Route exact path='/graphics/:id' render={(props) => <Graphics {...props} />} />
           <Route exact path='/qrGenerator'>
             <QrGenerator />
           </Route>

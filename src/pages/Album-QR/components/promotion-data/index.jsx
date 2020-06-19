@@ -3,15 +3,15 @@ import React from 'react'
 export default function PromotionData (props) {
   const { currentScans, totalScans, promotionName } = props
   return (
-    <div className='row'>
-      <div className='col-12'>
+    <div className='row py-3'>
+      <div className='col-12 col-md-9 text-left'>
         <h3>
-          Scans:{currentScans}/{totalScans}
+          {promotionName}
         </h3>
       </div>
-      <div className='col-12'>
+      <div className='col-12 col-md-3 text-left text-md-right'>
         <h3>
-          promotion:{promotionName}
+          Scans:{currentScans}/{totalScans}
         </h3>
       </div>
     </div>

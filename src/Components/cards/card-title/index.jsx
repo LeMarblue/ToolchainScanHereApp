@@ -6,11 +6,11 @@ import './card-title.css'
 export default function CardTitle (props) {
   const { title, data } = props
   return (
-    <div className='card-title row'>
-      <div className='col-7'>
-        <h6>
+    <div className='card-title row text-white text-center pt-2'>
+      <div className='col-12'>
+        <h4 className='text-break'>
           {title}
-        </h6>
+        </h4>
       </div>
       {
         data && (
