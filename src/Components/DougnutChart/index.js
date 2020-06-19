@@ -1,73 +1,86 @@
 import React from 'react';
-import {Pie, Doughnut} from 'react-chartjs-2';
-import { CountScans } from '../../services/admin'
+import { Doughnut} from 'react-chartjs-2';
+import { CountScans, getPromo} from '../../services/admin'
 
-const state = {
-  labels: ['Leche', 'yoghurt', 'helado'],
-  datasets: [
-    {
-      label: 'Productos',
-      backgroundColor: [
-        '#B21F00',
-        '#C9DE00',
-        '#2FDE00',
-      ],
-      hoverBackgroundColor: [
-      '#501800',
-      '#4B5000',
-      '#175000',
-      ],
-      data: [65, 59, 80]
-    }
-  ]
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
 }
 
 export default class DoughnutChart extends React.Component {
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     scans: []
-  //   }
-  //   this._renderScans = this._renderScans.bind(this)
-  // }
-
-  // async componentDidMount () {
-  //   try {
-  //     //const token = window.localStorage.getItem('authToken')
-  //     id="5ed9c6182b2fde4d3083caa5"
-  //     const response = await CountScans(id)
-  //     const dataResponse = await response.json()
-  //     console.log(dataResponse.data.scans)
-  //     this.setState({
-  //       scans: dataResponse.data.scans
-  //     })
-  //   } catch (error) {
-  //     console.log('Error', error)
-  //   }
-  // }
+  constructor (props) {
+    super(props)
+    this.state = {
+      promotion: [],
+      productsScans: [],
+      productNames:[],
+      scans:[]
+    }
+  }
 
 
-  // _renderPosts () {
-  //   const { posts } = this.state
-  //   return posts.map(({ _id, category, title, description, author, publication_date, estimated_time, image }) => (
-  //     <Post
-  //       key={_id}
-  //       id={_id}
-  //       category={category}
-  //       title={title}
-  //       description={description}
-  //       author={author}
-  //       publication_date={publication_date}
-  //       estimated_time={estimated_time}
-  //       image={image}
-  //     />
-  //   ))
-  // }
-
+  async componentDidMount () {
+    const { promo_id } = this.props
+    try {
+      const token = localStorage.getItem('authUserToken')
+      const response = await getPromo(promo_id,token)
+      const dataResponse = await response.json()
+      this.setState({
+        promotion: dataResponse.data.promotion.productInfo
+      })
+    } catch (error) {
+      console.log('Error', error)
+    }
+    const listOfScans=[]
+    const listOfNames=[]
+    await asyncForEach(this.state.promotion, async (element) => {
+      try {
+        const token = localStorage.getItem('authUserToken')
+        const response = await CountScans(element._id,promo_id,token)
+        const dataResponse = await response.json()
+        listOfScans.push(dataResponse.data.scans)
+        listOfNames.push(element.productName)
+      } catch (error) {
+        console.log('Error', error)
+      }
+    })
+    this.setState({
+      scans: listOfScans,
+      productNames: listOfNames
+    })
+  }
 
   render() {
+    const state = {
+      labels: this.state.productNames,
+      datasets: [
+        {
+          label: 'Productos',
+          backgroundColor: [
+            '#B21F00',
+            '#C9DE00',
+            '#2FDE00',
+          ],
+          hoverBackgroundColor: [
+          '#501800',
+          '#4B5000',
+          '#175000',
+          ],
+          data: this.state.scans
+        }
+      ]
+    }
     return (
       <div>
+        <h1>
+          {/* {
+          state.datasets[0].data=this.state.scans
+          }
+          {
+            state.labels=this.state.productNames
+          } */}
+        </h1>
         <Doughnut
           data={state}
           options={{
