@@ -8,7 +8,7 @@ export default function CardTitle (props) {
   return (
     <div className='card-title row text-white text-center pt-2'>
       <div className='col-12'>
-        <h4 className='text-break'>
+        <h4 className='text-break color-title'>
           {title}
         </h4>
       </div>

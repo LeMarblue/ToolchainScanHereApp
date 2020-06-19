@@ -4,6 +4,8 @@ import {createProduct} from '../../services/admin'
 import NavBarAdmin from '../../Components/NavBarAdmin'
 import Input from '../../pages/SignIn/components/inputs'
 
+import './ProductForm.css'
+
 export default class ProductForm extends Component {
   constructor(props) {
     super(props);
@@ -55,44 +57,51 @@ export default class ProductForm extends Component {
           <Header
           />
           <div className='row d-flex justify-content-center'>
-            <form onSubmit={this.handleSubmit} className='border border-black p-5 shadow p-3 mb-5 bg-white rounded'> 
-            <div className='col-lg-6 col-md-12'>
-              <input
+            <form onSubmit={this.handleSubmit} className='p-5 p-3 mb-5 formScanHere'> 
+            <div className=' col-md-12 productRegister'>
+              <Input
+                name="productName"
+                labelFor="productName"
                 placeholder="Nombre del producto"
                 value={productName}
                 onChange={this.handlerInput}
-                name="productName"
                 class='form-comtrol'
               />
               </div>
-              <div className='col-lg-6 col-md-12'>
-              <input
+            
+              <div className=' col-md-12 productRegister'>
+              <Input
                 type='number'
                 placeholder={"SKU"}
                 value={sku}
                 onChange={this.handlerInput}
                 name="sku"
+                className="form-comtrol"
               />
               </div>
-              <div className='col-lg-6 col-md-12'>
-              <input
+             
+              <div className=' col-md-12 productRegister'>
+              <Input
                 type='number'
                 placeholder={"Precio"}
                 value={price}
                 onChange={this.handlerInput}
                 name="price"
+                className="form-comtrol"
               />
               </div>
-              <div className='col-lg-6 col-md-12'>
-              <input
+           
+              <div className=' col-md-12 productRegister'>
+              <Input
                 type='string'
                 placeholder={"MXN"}
                 value={currency}
                 onChange={this.handlerInput}
                 name="currency"
+                className="form-comtrol"
               />
               </div>
-              <div className="col-lg-6 col-md-12 d-flex justify-content-center"> 
+              <div className=" col-md-12 d-flex justify-content-center"> 
                   {/* <div className='row d-flex justify-content-center'>
                     <div className='col-6'> */}
                       <button type='submit' className='m-3 px-4 button py-2' >REGISTRAR PRODUCTO</button>

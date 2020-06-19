@@ -47,17 +47,19 @@ export default class AlbumLayout extends Component {
           this.buildAlbumArray().map((element, index) => {
             return (
               <div className='col-4 py-3 ' key={index}>
-                <div className='conteiner-stiker'>
-                  {
-                    element ? (
+                {
+                  element ? (
+                    <div className='container-blue'>
                       <img src={Logo} alt='ScanedQR' className='logo-album' />
-                    )
-                      : (
+                    </div>
+                  )
+                    : (
+                      <div className='conteiner-stiker'>
 
                         <img className='logo-opaque' src={Logo} alt='ScanedQR' />
-                      )
-                  }
-                </div>
+                      </div>
+                    )
+                }
               </div>
             )
           })

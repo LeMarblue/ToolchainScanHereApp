@@ -55,12 +55,20 @@ async function getPromotionsScansByUser (token, promotionId) {
 }
 async function signup (newUserData) {
   try {
+    const parsedData = {
+      name: newUserData.Nombre,
+      email: newUserData.Email,
+      password: newUserData.Contrasena,
+      city: newUserData.Ciudad,
+      age: newUserData.Edad,
+      gender: newUserData.gender
+    }
     const response = await fetch(`${urlBase}/users/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUserData)
+      body: JSON.stringify(parsedData)
     })
     const parsedJson = await response.json()
     if (!parsedJson.success) {
@@ -75,12 +83,16 @@ async function signup (newUserData) {
 
 async function login (userData) {
   try {
+    const parsedData = {
+      email: userData.Email,
+      password: userData.Contrasena
+    }
     const response = await fetch(`${urlBase}/auth/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(userData)
+      body: JSON.stringify(parsedData)
     })
     const parsedJson = await response.json()
     if (!parsedJson.success) {

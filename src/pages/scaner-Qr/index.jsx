@@ -5,7 +5,6 @@ import api from '../../lib/api'
 
 import Header from '../../Components/Header'
 import CardGradiantContainer from '../Promo-Qr-List/components/cards/cards-gradiant-container'
-import NavBarAdmin from '../../Components/NavBarAdmin'
 // css
 
 export default class ScanQr extends Component {
@@ -79,12 +78,16 @@ export default class ScanQr extends Component {
 
     return (
       <div className='container'>
+        <Header />
         <div className='row'>
-          <Header />
+          <div className='col-12'>
+            <h1 className='px-3'>
+              Scanea
+            </h1>
+          </div>
         </div>
-
-        <div className='row d-flex justify-content-center p-3'>
-          <div className='col-5'>
+        <div className='row p-3'>
+          <div className='col-12 d-flex justify-content-center'>
             <CardGradiantContainer>
               <QrReader
                 delay={delay}
