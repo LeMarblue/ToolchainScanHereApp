@@ -1,4 +1,4 @@
-const urlBase = 'https://scanhereapi.mybluemix.net/'
+const urlBase = 'https://scanhereapi.mybluemix.net'
 
 async function getAllPromotions (token) {
   try {
