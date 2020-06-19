@@ -1,0 +1,8 @@
+.card-gradiant-container{
+  background-color: #2F303A;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow:6px 6px 10px black;
+  border-image-slice:1 ;
+  }
+  

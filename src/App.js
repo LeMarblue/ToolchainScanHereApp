@@ -8,7 +8,16 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Graphics from './pages/Graphics'
 import PagePromoList from './pages/Promo-List'
+import QrGenerator from './pages/QrGenerator'
+import PromoForm from './pages/PromoForm'
+import ProductForm from './pages/ProductForm'
+import Landing from './pages/LandingPage'
+import SignIn from './pages/SignIn'
+import Promos from './pages/Promos'
+import AlbumQr from './pages/Album-QR'
+import ScanQr from './pages/scaner-Qr'
 
 function App () {
   return (
@@ -16,7 +25,7 @@ function App () {
       <div className='App'>
         <Switch>
           <Route exact path='/'>
-            <Home />
+            <Landing />
           </Route>
           <Route exact path='/login'>
             <Login />
@@ -24,9 +33,24 @@ function App () {
           <Route exact path='/promo-list'>
             <PagePromoList />
           </Route>
-          {/* <Route exact path='/sigin'>
-            <SigIn />
-          </Route> */}
+          <Route exact path='/graphics/:id' render={(props) => <Graphics {...props} />} />
+          <Route exact path='/qrGenerator'>
+            <QrGenerator />
+          </Route>
+          <Route exact path='/promo-form'>
+            <PromoForm />
+          </Route>
+          <Route exact path='/product-form'>
+            <ProductForm />
+          </Route>
+          <Route exact path='/signin'>
+            <SignIn />
+          </Route>
+          <Route exact path='/promos'>
+            <Promos />
+          </Route>
+          <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
+          <Route exact path='/album-qr/:promotionId/scan-qr' component={ScanQr} />
         </Switch>
       </div>
     </Router>

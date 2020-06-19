@@ -1,13 +1,13 @@
 import React from 'react'
 
-import CardContainer from '../card-container'
-import './cards-wrapper.css'
 import CardBody from '../card-body'
+import CardContainer from '../card-container'
+// css
+import './cards-wrapper.css'
 
 export default function CardList (props) {
-  const { cardsPromos } = props
+  const { cardsPromos = [] } = props
   return (
-
     <div className='row'>
       {
         cardsPromos.map((cardPromo, index) => {

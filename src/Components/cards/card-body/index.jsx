@@ -5,7 +5,6 @@ import CardPromoDataWrapper from '../card-promo-data-wrapper'
 
 export default function CardBody (props) {
   const { titleData, promoData, graphData } = props
-  console.log('cardBodyProps:', props)
   return (
     <div className='row card-body'>
       <div className='col-12'>

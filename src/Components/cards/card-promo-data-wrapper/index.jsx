@@ -4,7 +4,6 @@ import moment from 'moment'
 
 export default function CardPromoDataWrapper (props) {
   const { productQuantity, startData, endData } = props
-  console.log(props)
   return (
     <div className='row card-promo-data-wrapper'>
       <div className='col-12'>
