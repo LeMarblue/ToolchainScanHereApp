@@ -53,19 +53,21 @@ export default class DoughnutChart extends React.Component {
 
   render() {
     const state = {
+      fontColor: 'white',
       labels: this.state.productNames,
       datasets: [
         {
+          fontColor: 'white',
           label: 'Productos',
           backgroundColor: [
-            '#B21F00',
-            '#C9DE00',
-            '#2FDE00',
+            '#4374ED',
+            '#9226C5',
+            '#0C8B28',
           ],
           hoverBackgroundColor: [
-          '#501800',
-          '#4B5000',
-          '#175000',
+          '#1843AC',
+          '#3D0A55',
+          '#084115',
           ],
           data: this.state.scans
         }
@@ -73,25 +75,20 @@ export default class DoughnutChart extends React.Component {
     }
     return (
       <div>
-        <h1>
-          {/* {
-          state.datasets[0].data=this.state.scans
-          }
-          {
-            state.labels=this.state.productNames
-          } */}
-        </h1>
         <Doughnut
           data={state}
           options={{
             title:{
               display:true,
               text:'Escaneos por producto',
-              fontSize:25
+              fontSize:25,
+              fontColor: 'white',
             },
             legend:{
+              fontSize:20,
               display:true,
-              position:'left'
+              position:'left',
+              
             }
           }}
         />

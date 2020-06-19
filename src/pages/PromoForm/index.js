@@ -96,9 +96,9 @@ export default class PromoForm extends Component {
               <div className="row ">
               <div className="col-12 d-flex justify-content-center "> 
               <form onSubmit={this.handleSubmit} className=' p-5 p-3 mb-5 '>
-                  <select className="" id="selectOptios" onChange={this.handlerInput} value={this.state.value}>
+                  <select className="rounded bg-white" id="selectOptios" onChange={this.handlerInput} value={this.state.value}>
                     <option value="none" selected disabled hidden> 
-                      Escoje un Producto
+                      Selecciona un Producto
                     </option> 
                     { this._renderProducts()}
                   </select>
@@ -111,7 +111,6 @@ export default class PromoForm extends Component {
                     onChange={this.handlerInput}
                     name={"Escaneos"}
                     labelfor='Numero de escaneos' 
-                    className="escaneos"
                   />
                   {/* </div>
                   <div className="col-12 ">  */}
@@ -145,7 +144,7 @@ export default class PromoForm extends Component {
                   />
                   {/* </div> */}
                   <div className="col-12 d-flex justify-content-center"> 
-                      <button type='submit' className='m-4 button py-2 px-6 registrarPromo' onClick={this.handleSubmit}>REGISTRAR PROMOCIÓN</button>
+                      <button type='submit' className='m-4 button py-2 px-4 registrarPromo ' onClick={this.handleSubmit}>REGISTRAR PROMOCIÓN</button>
                   </div>
                   </form>
                   </div>

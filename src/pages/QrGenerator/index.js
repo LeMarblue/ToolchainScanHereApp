@@ -59,7 +59,7 @@ export default class QrGenerator extends React.Component {
             <div className="products  ">
             <select className="form-control form-control-sm" id="selectOptios" onChange={this.handleInput} value={this.state.value}>
             <option value="none" selected disabled hidden> 
-              Select an Option 
+              Selecciona una Opción
             </option> 
               { this._renderProducts()}
             </select>
