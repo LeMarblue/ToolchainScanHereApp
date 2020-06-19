@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // css
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import Login from './Components/Login'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import Login from './pages/Login'
 import Graphics from './pages/Graphics'
 import PagePromoList from './pages/Promo-List'
@@ -24,8 +24,8 @@ function App () {
     <Router>
       <div className='App'>
         <Switch>
-        <Route exact path='/'>
-            <Landing/>
+          <Route exact path='/'>
+            <Landing />
           </Route>
           <Route exact path='/login'>
             <Login />
@@ -33,7 +33,7 @@ function App () {
           <Route exact path='/promo-list'>
             <PagePromoList />
           </Route>
-          <Route exact path='/graphics/:id' render={(props) => <Graphics  {...props} />} />
+          <Route exact path='/graphics/:id' render={(props) => <Graphics {...props} />} />
 
           <Route exact path='/qrGenerator'>
             <QrGenerator />
