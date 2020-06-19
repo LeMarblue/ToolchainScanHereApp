@@ -129,7 +129,7 @@ async function postScan (qr, promotionId, token) {
   }
 }
 
-module.exports = {
+export default {
   getAllPromotions,
   getPromotionById,
   getPromotionsScansByUser,
