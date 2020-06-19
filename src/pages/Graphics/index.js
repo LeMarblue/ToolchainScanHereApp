@@ -14,19 +14,15 @@ export default class Admin extends React.Component {
     return (
       <div>
         <Header/>
-        <div className='row'>
-          <div className='col-lg-6 col-md-12'>
+        {/* <div className='row'>
+          <div className='col-md-12 d-flex align-content-center'> */}
             <div className="card">
               <div id="dougnut">
               <Dougnut promo_id={id}/>
               </div>
             </div>
-          </div>
-          {/* <div className='col-lg-6 col-md-12'>
-            <AreaParams/>
-            <Mixed promo_id={id}/>
-          </div> */}
-        </div>
+          {/* </div>
+        </div> */}
         <NavBarAdmin/>
       </div>
     );
