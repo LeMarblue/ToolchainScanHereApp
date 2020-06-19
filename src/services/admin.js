@@ -59,11 +59,19 @@ function getProducts (token) {
 }
 
 function createPromo (dataPromo, token) {
-  //function createPromo (dataPromo) {
+    const parsedData = {
+      sku: dataPromo.SKU,
+      productInfo: dataPromo.productInfo,
+      numberOfScans: dataPromo.Escaneos,
+      promoStarts: dataPromo.Inicio,
+      promoEnds: dataPromo.Fin,
+      state:"activo",
+      prize: dataPromo.Premio,
+    }
   const URL = `${URL_BASE}promotions`
   const options = {
     method: 'POST',
-    body: JSON.stringify(dataPromo),
+    body: JSON.stringify(parsedData),
     headers: {
       'Content-Type': 'application/json',
       Authorization: token
