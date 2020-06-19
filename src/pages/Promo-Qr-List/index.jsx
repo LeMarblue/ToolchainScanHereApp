@@ -6,7 +6,6 @@ import './page-promo-qr-list.css'
 
 import CardsQrWrapper from './components/cards/cards-qr-wrapper'
 import api from '../../lib/api'
-import NavBarAdmin from '../../Components/NavBarAdmin'
 import Header from '../../Components/Header'
 
 export default class PagePromoQrlist extends Component {
